@@ -1,8 +1,9 @@
 {
   "name": "lotus-variants-dashboard",
   "version": "1.0.0",
-  "description": "Lotus Direct Care Design Variants Dashboard",
+  "description": "Lotus Direct Care Design Variants Dashboard - Static Site",
   "scripts": {
-    "build": "echo 'No build required for static site'"
-  }
+    "build": "echo 'Static site - no build required'"
+  },
+  "homepage": "https://lotus-variants-dash2.netlify.app"
 }
