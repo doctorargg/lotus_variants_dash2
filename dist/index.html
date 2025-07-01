@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lotus Direct Care - Design Variants Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 5px;
+        }
+        
+        .lotus-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: linear-gradient(45deg, #8e44ad, #3498db);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .variant-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .variant-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .variant-header {
+            padding: 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .variant-number {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+        
+        .variant-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .variant-description {
+            font-size: 0.95em;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+        
+        .variant-body {
+            padding: 25px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #27ae60;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .view-demo {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: opacity 0.3s ease;
+        }
+        
+        .view-demo:hover {
+            opacity: 0.9;
+        }
+        
+        .coming-soon {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        .footer h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .footer p {
+            color: #7f8c8d;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="lotus-icon">🪷</div>
+            <h1>Lotus Direct Care</h1>
+            <p>Design Variants Showcase</p>
+            <p>Explore 10 unique design approaches for modern healthcare</p>
+        </div>
+        
+        <div class="variants-grid">
+            <!-- Variant 1 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 1</div>
+                    <div class="variant-name">Minimalist</div>
+                    <div class="variant-description">Clean monochromatic design with dark mode toggle</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Sans-serif typography</li>
+                        <li>Dark/Light mode toggle</li>
+                        <li>Monochromatic palette</li>
+                        <li>Focus on whitespace</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 2 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 2</div>
+                    <div class="variant-name">Glassmorphism</div>
+                    <div class="variant-description">Frosted glass effects with gradient backgrounds</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Translucent elements</li>
+                        <li>Vibrant gradients</li>
+                        <li>Depth and layering</li>
+                        <li>Modern blur effects</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 3 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 3</div>
+                    <div class="variant-name">Retro-futuristic</div>
+                    <div class="variant-description">80s synthwave with neon colors and glitch effects</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Neon color scheme</li>
+                        <li>Glitch animations</li>
+                        <li>Retro typography</li>
+                        <li>Synthwave aesthetics</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 4 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 4</div>
+                    <div class="variant-name">Organic</div>
+                    <div class="variant-description">Nature-inspired with earth tones and seasonal themes</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Earth tone palette</li>
+                        <li>Organic shapes</li>
+                        <li>Seasonal themes</li>
+                        <li>Natural textures</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 5 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 5</div>
+                    <div class="variant-name">Luxury</div>
+                    <div class="variant-description">Premium gold/black aesthetic with elegant typography</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Gold accents</li>
+                        <li>Serif typography</li>
+                        <li>Premium feel</li>
+                        <li>Sophisticated layout</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 6 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 6</div>
+                    <div class="variant-name">Cyberpunk</div>
+                    <div class="variant-description">Tech/neural theme with electric neon colors</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Cyber aesthetics</li>
+                        <li>Neural networks</li>
+                        <li>Electric colors</li>
+                        <li>Tech animations</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 7 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 7</div>
+                    <div class="variant-name">Artistic</div>
+                    <div class="variant-description">Creative paint/canvas theme with vibrant colors</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Artistic brushstrokes</li>
+                        <li>Vibrant palette</li>
+                        <li>Creative layouts</li>
+                        <li>Paint effects</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 8 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 8</div>
+                    <div class="variant-name">Zen</div>
+                    <div class="variant-description">Meditative design with chakra colors and mindfulness</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Chakra colors</li>
+                        <li>Calming design</li>
+                        <li>Mindful elements</li>
+                        <li>Peaceful layout</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 9 -->
+            <div class="variant-card">
+                <div class="variant-header">
+                    <div class="variant-number">Variant 9</div>
+                    <div class="variant-name">Sports Performance</div>
+                    <div class="variant-description">Athletic theme with performance dashboards</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Performance metrics</li>
+                        <li>Athletic design</li>
+                        <li>Dynamic layouts</li>
+                        <li>Energy colors</li>
+                    </ul>
+                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                </div>
+            </div>
+            
+            <!-- Variant 10 -->
+            <div class="variant-card">
+                <div class="variant-header" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
+                    <div class="variant-number">Variant 10</div>
+                    <div class="variant-name">Corporate Healthcare</div>
+                    <div class="variant-description">Executive Health with Lotus backgrounds</div>
+                </div>
+                <div class="variant-body">
+                    <ul class="feature-list">
+                        <li>Executive styling</li>
+                        <li>Lotus backgrounds</li>
+                        <li>Glass morphism</li>
+                        <li>Business metrics</li>
+                    </ul>
+                    <a href="https://lotus-executive-health.netlify.app" class="view-demo" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">View Live Demo</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h2>About This Showcase</h2>
+            <p>This dashboard presents 10 unique design variants for Lotus Direct Care, each offering a distinct visual approach to modern healthcare presentation. From minimalist elegance to vibrant artistic expression, these variants demonstrate the versatility of contemporary web design in the healthcare sector.</p>
+        </div>
+    </div>
+</body>
+</html>
