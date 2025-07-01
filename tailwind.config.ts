@@ -116,8 +116,8 @@ const config: Config = {
           },
         },
         fontFamily: {
-          'corporate': ['Inter', 'system-ui', 'sans-serif'],
-          'executive': ['Roboto', 'system-ui', 'sans-serif'],
+          corporate: ['Inter', 'system-ui', 'sans-serif'],
+          executive: ['Roboto', 'system-ui', 'sans-serif'],
         },
         boxShadow: {
           'corporate': '0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
