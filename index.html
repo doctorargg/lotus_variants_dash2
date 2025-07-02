@@ -235,6 +235,32 @@
         .close:focus {
             color: #000;
         }
+        
+        .action-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 5px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+        
+        .action-button:hover {
+            opacity: 0.9;
+        }
+        
+        .action-button.primary {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        }
+        
+        .action-button.success {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
     </style>
 </head>
 <body>
@@ -247,7 +273,7 @@
         </div>
         
         <div class="variants-grid">
-            <!-- Variant 1 -->
+            <!-- Variants 1-9 (unchanged) -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 1</div>
@@ -265,7 +291,6 @@
                 </div>
             </div>
             
-            <!-- Variant 2 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 2</div>
@@ -283,7 +308,6 @@
                 </div>
             </div>
             
-            <!-- Variant 3 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 3</div>
@@ -301,7 +325,6 @@
                 </div>
             </div>
             
-            <!-- Variant 4 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 4</div>
@@ -319,7 +342,6 @@
                 </div>
             </div>
             
-            <!-- Variant 5 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 5</div>
@@ -337,7 +359,6 @@
                 </div>
             </div>
             
-            <!-- Variant 6 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 6</div>
@@ -355,7 +376,6 @@
                 </div>
             </div>
             
-            <!-- Variant 7 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 7</div>
@@ -373,7 +393,6 @@
                 </div>
             </div>
             
-            <!-- Variant 8 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 8</div>
@@ -391,7 +410,6 @@
                 </div>
             </div>
             
-            <!-- Variant 9 -->
             <div class="variant-card">
                 <div class="variant-header">
                     <div class="variant-number">Variant 9</div>
@@ -409,7 +427,7 @@
                 </div>
             </div>
             
-            <!-- Variant 10 -->
+            <!-- Variant 10 - Executive Health -->
             <div class="variant-card">
                 <div class="variant-header" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
                     <div class="variant-number">Variant 10 <span class="status-badge">Ready</span></div>
@@ -423,7 +441,7 @@
                         <li>Glass morphism</li>
                         <li>Business metrics</li>
                     </ul>
-                    <button class="view-demo live-demo" onclick="showVariantInfo('Executive Health', 'This variant features executive-level healthcare design with Lotus Midjourney backgrounds, glass morphism effects, and business-focused metrics. Ready for deployment!')">View Executive Health</button>
+                    <button class="view-demo live-demo" onclick="showVariantInfo('Executive Health', 'This variant features executive-level healthcare design with Lotus Midjourney backgrounds, glass morphism effects, and business-focused metrics. Ready for deployment!', true)">View Executive Health</button>
                 </div>
             </div>
         </div>
@@ -443,6 +461,7 @@
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 id="modalTitle" style="color: #2c3e50; margin-bottom: 15px;"></h2>
             <p id="modalDescription" style="color: #7f8c8d; line-height: 1.6;"></p>
+            <div id="modalActions" style="margin-top: 20px; text-align: center;"></div>
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
                 <p style="font-size: 0.9em; color: #95a5a6;">
                     For deployment information or to request access, please contact the development team.
@@ -452,10 +471,35 @@
     </div>
     
     <script>
-        function showVariantInfo(title, description) {
+        function showVariantInfo(title, description, isReady = false) {
             document.getElementById('modalTitle').textContent = title;
             document.getElementById('modalDescription').textContent = description;
+            
+            const actionsDiv = document.getElementById('modalActions');
+            actionsDiv.innerHTML = '';
+            
+            if (isReady && title === 'Executive Health') {
+                actionsDiv.innerHTML = `
+                    <p style="font-weight: bold; color: #27ae60; margin-bottom: 15px;">✅ This variant is ready for deployment!</p>
+                    <p style="margin-bottom: 20px; font-size: 0.9em; color: #7f8c8d;">
+                        The Executive Health variant includes all the Lotus background enhancements and is production-ready.
+                    </p>
+                    <div>
+                        <a href="https://github.com/doctorargg/lotus_variant_10_corporate" target="_blank" class="action-button success">
+                            View on GitHub
+                        </a>
+                        <button onclick="showDeployInstructions()" class="action-button primary">
+                            Deploy Instructions
+                        </button>
+                    </div>
+                `;
+            }
+            
             document.getElementById('variantModal').style.display = 'block';
+        }
+        
+        function showDeployInstructions() {
+            alert('To deploy the Executive Health variant:\n\n1. Fork the repository from GitHub\n2. Create a new Netlify site\n3. Connect your forked repository\n4. Deploy with these settings:\n   - Build command: npm run build\n   - Publish directory: .next\n\nThe variant is already configured with Lotus backgrounds!');
         }
         
         function closeModal() {
