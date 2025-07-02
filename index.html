@@ -139,6 +139,8 @@
             font-weight: bold;
             transition: opacity 0.3s ease;
             cursor: pointer;
+            border: none;
+            font-size: 16px;
         }
         
         .view-demo:hover {
@@ -186,6 +188,53 @@
             margin-left: 10px;
             background: rgba(255,255,255,0.3);
         }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+        }
     </style>
 </head>
 <body>
@@ -212,7 +261,7 @@
                         <li>Monochromatic palette</li>
                         <li>Focus on whitespace</li>
                     </ul>
-                    <a href="/variant-1" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Minimalist', 'This variant features a clean, modern design with monochromatic colors and dark mode support. Currently in development.')">In Development</button>
                 </div>
             </div>
             
@@ -230,7 +279,7 @@
                         <li>Depth and layering</li>
                         <li>Modern blur effects</li>
                     </ul>
-                    <a href="/variant-2" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Glassmorphism', 'Features modern frosted glass effects with vibrant gradients. This variant is currently being designed.')">In Development</button>
                 </div>
             </div>
             
@@ -248,7 +297,7 @@
                         <li>Retro typography</li>
                         <li>Synthwave aesthetics</li>
                     </ul>
-                    <a href="/variant-3" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Retro-futuristic', 'A bold 80s-inspired design with neon colors and glitch effects. Coming soon!')">In Development</button>
                 </div>
             </div>
             
@@ -266,7 +315,7 @@
                         <li>Seasonal themes</li>
                         <li>Natural textures</li>
                     </ul>
-                    <a href="/variant-4" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Organic', 'Nature-inspired design with earth tones and organic shapes. Development starting soon.')">In Development</button>
                 </div>
             </div>
             
@@ -284,7 +333,7 @@
                         <li>Premium feel</li>
                         <li>Sophisticated layout</li>
                     </ul>
-                    <a href="/variant-5" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Luxury', 'Premium design with gold accents and elegant typography. Under construction.')">In Development</button>
                 </div>
             </div>
             
@@ -302,7 +351,7 @@
                         <li>Electric colors</li>
                         <li>Tech animations</li>
                     </ul>
-                    <a href="/variant-6" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Cyberpunk', 'Futuristic tech design with neural network aesthetics. Coming soon!')">In Development</button>
                 </div>
             </div>
             
@@ -320,7 +369,7 @@
                         <li>Creative layouts</li>
                         <li>Paint effects</li>
                     </ul>
-                    <a href="/variant-7" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Artistic', 'Creative design with artistic brushstrokes and vibrant colors. In planning phase.')">In Development</button>
                 </div>
             </div>
             
@@ -338,7 +387,7 @@
                         <li>Mindful elements</li>
                         <li>Peaceful layout</li>
                     </ul>
-                    <a href="/variant-8" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Zen', 'Calming, meditative design with chakra-inspired colors. Development planned.')">In Development</button>
                 </div>
             </div>
             
@@ -356,7 +405,7 @@
                         <li>Dynamic layouts</li>
                         <li>Energy colors</li>
                     </ul>
-                    <a href="/variant-9" class="view-demo in-development">In Development</a>
+                    <button class="view-demo in-development" onclick="showVariantInfo('Sports Performance', 'Dynamic athletic design with performance metrics. Coming soon!')">In Development</button>
                 </div>
             </div>
             
@@ -374,18 +423,52 @@
                         <li>Glass morphism</li>
                         <li>Business metrics</li>
                     </ul>
-                    <a href="/executive-health" class="view-demo live-demo">View Executive Health</a>
+                    <button class="view-demo live-demo" onclick="showVariantInfo('Executive Health', 'This variant features executive-level healthcare design with Lotus Midjourney backgrounds, glass morphism effects, and business-focused metrics. Ready for deployment!')">View Executive Health</button>
                 </div>
             </div>
         </div>
         
         <div class="footer">
             <h2>About This Showcase</h2>
-            <p>This dashboard presents 10 unique design variants for Lotus Direct Care, each offering a distinct visual approach to modern healthcare presentation. Click on any variant to explore its design in detail.</p>
+            <p>This dashboard presents 10 unique design variants for Lotus Direct Care, each offering a distinct visual approach to modern healthcare presentation. Click on any variant to learn more.</p>
             <p style="margin-top: 20px; font-size: 0.9em;">
                 <strong>Status:</strong> Executive Health variant is ready for deployment. Other variants are in development.
             </p>
         </div>
     </div>
+    
+    <!-- Modal -->
+    <div id="variantModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color: #2c3e50; margin-bottom: 15px;"></h2>
+            <p id="modalDescription" style="color: #7f8c8d; line-height: 1.6;"></p>
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                <p style="font-size: 0.9em; color: #95a5a6;">
+                    For deployment information or to request access, please contact the development team.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showVariantInfo(title, description) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('variantModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('variantModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('variantModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
