@@ -138,6 +138,7 @@
             border-radius: 8px;
             font-weight: bold;
             transition: opacity 0.3s ease;
+            cursor: pointer;
         }
         
         .view-demo:hover {
@@ -147,6 +148,14 @@
         .coming-soon {
             background: #95a5a6;
             cursor: not-allowed;
+        }
+        
+        .live-demo {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+        
+        .in-development {
+            background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
         }
         
         .footer {
@@ -167,6 +176,15 @@
             line-height: 1.6;
             max-width: 800px;
             margin: 0 auto;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin-left: 10px;
+            background: rgba(255,255,255,0.3);
         }
     </style>
 </head>
@@ -194,7 +212,7 @@
                         <li>Monochromatic palette</li>
                         <li>Focus on whitespace</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-1" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -212,7 +230,7 @@
                         <li>Depth and layering</li>
                         <li>Modern blur effects</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-2" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -230,7 +248,7 @@
                         <li>Retro typography</li>
                         <li>Synthwave aesthetics</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-3" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -248,7 +266,7 @@
                         <li>Seasonal themes</li>
                         <li>Natural textures</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-4" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -266,7 +284,7 @@
                         <li>Premium feel</li>
                         <li>Sophisticated layout</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-5" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -284,7 +302,7 @@
                         <li>Electric colors</li>
                         <li>Tech animations</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-6" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -302,7 +320,7 @@
                         <li>Creative layouts</li>
                         <li>Paint effects</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-7" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -320,7 +338,7 @@
                         <li>Mindful elements</li>
                         <li>Peaceful layout</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-8" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
@@ -338,14 +356,14 @@
                         <li>Dynamic layouts</li>
                         <li>Energy colors</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/variant-9" class="view-demo in-development">In Development</a>
                 </div>
             </div>
             
             <!-- Variant 10 -->
             <div class="variant-card">
                 <div class="variant-header" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);">
-                    <div class="variant-number">Variant 10</div>
+                    <div class="variant-number">Variant 10 <span class="status-badge">Ready</span></div>
                     <div class="variant-name">Corporate Healthcare</div>
                     <div class="variant-description">Executive Health with Lotus backgrounds</div>
                 </div>
@@ -356,14 +374,17 @@
                         <li>Glass morphism</li>
                         <li>Business metrics</li>
                     </ul>
-                    <a href="#" class="view-demo coming-soon">Coming Soon</a>
+                    <a href="/executive-health" class="view-demo live-demo">View Executive Health</a>
                 </div>
             </div>
         </div>
         
         <div class="footer">
             <h2>About This Showcase</h2>
-            <p>This dashboard presents 10 unique design variants for Lotus Direct Care, each offering a distinct visual approach to modern healthcare presentation. From minimalist elegance to vibrant artistic expression, these variants demonstrate the versatility of contemporary web design in the healthcare sector.</p>
+            <p>This dashboard presents 10 unique design variants for Lotus Direct Care, each offering a distinct visual approach to modern healthcare presentation. Click on any variant to explore its design in detail.</p>
+            <p style="margin-top: 20px; font-size: 0.9em;">
+                <strong>Status:</strong> Executive Health variant is ready for deployment. Other variants are in development.
+            </p>
         </div>
     </div>
 </body>
